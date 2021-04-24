@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player_movement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public float movementSpeed = 30;
-    public float diveSpeed = 30;
+    public float baseSpeed = 40;
+    public float movementSpeed = 40;
+    private float sprintSpeedMult = 2;
+    public float diveSpeed = 40;
     private bool isFlippedX;
     private bool isIdle;
     [SerializeField] Animator animator;
@@ -34,12 +36,12 @@ public class player_movement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetBool("isShift", true);
-            movementSpeed = 60;
+            movementSpeed = baseSpeed * sprintSpeedMult;
         }
         else
         {
             animator.SetBool("isShift", false);
-            movementSpeed = 30;
+            movementSpeed = baseSpeed;
         }
 
         CheckIdle(movementHorizontal, movementVertical);
