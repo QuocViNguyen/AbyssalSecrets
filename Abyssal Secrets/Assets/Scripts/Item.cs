@@ -35,7 +35,7 @@ public class Shield : Item
 
     public override void Use()
     {
-
+        Object.Instantiate(Resources.Load("Shield"));
     }
 }
 

@@ -861,49 +861,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578128167}
   m_CullTransparentMesh: 1
---- !u!1 &591181479
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 591181480}
-  - component: {fileID: 591181481}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &591181480
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591181479}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.955179, y: 2.3762221, z: -2.973759}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &591181481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591181479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e996681d5a5334eb3aff623259efe767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &746463933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2136446987}
+  - component: {fileID: 2136446988}
   m_Layer: 5
   m_Name: ItemList
   m_TagString: Untagged
@@ -1725,3 +1683,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -4.200012}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &2136446988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136446986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e996681d5a5334eb3aff623259efe767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedBoostSprite: {fileID: -2131995345660822173, guid: ac5f13e79ca134f9c878512798394f9a, type: 3}
+  inkBombSprite: {fileID: 5189795097508568191, guid: ac5f13e79ca134f9c878512798394f9a, type: 3}
+  meatSprite: {fileID: 3176707103414299268, guid: ac5f13e79ca134f9c878512798394f9a, type: 3}
+  shieldSprite: {fileID: -9055395392289881484, guid: ac5f13e79ca134f9c878512798394f9a, type: 3}
+  magicSprite: {fileID: -1385802521261846899, guid: ac5f13e79ca134f9c878512798394f9a, type: 3}
