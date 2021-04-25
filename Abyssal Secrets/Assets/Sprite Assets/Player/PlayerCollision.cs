@@ -21,7 +21,7 @@ public class PlayerCollision : MonoBehaviour
     {
         while (collision.gameObject.layer == 7 && playerHealth.currentHealth>0)
         {
-            playerHealth.OnHealthChanged(playerHealth.currentHealth-5);
+            playerHealth.OnHealthChanged(playerHealth.currentHealth-3);
             yield return new WaitForSeconds(1);   //Wait
         }
     }
