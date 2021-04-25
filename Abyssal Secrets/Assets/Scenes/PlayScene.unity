@@ -1837,6 +1837,17 @@ PrefabInstance:
       objectReference: {fileID: 636335617247715303}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290b09fb1f3e74a7ea958242d4da2637, type: 3}
+--- !u!114 &817224917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5250309399762248116, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
+  m_PrefabInstance: {fileID: 8036740607044312542}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &891084835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1609972631024509934, guid: c220bd52601b00e46935c2a4c6b46d69, type: 3}
@@ -2394,6 +2405,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 692542069}
+    - target: {fileID: 3477984532987331266, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
+      propertyPath: sealevel
+      value: 
+      objectReference: {fileID: 569539792}
+    - target: {fileID: 3477984532987331266, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
+      propertyPath: depthMeter
+      value: 
+      objectReference: {fileID: 817224917}
     - target: {fileID: 5237219001267091301, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
       propertyPath: m_Name
       value: player
