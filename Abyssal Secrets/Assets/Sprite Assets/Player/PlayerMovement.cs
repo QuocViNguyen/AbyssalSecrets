@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isIdle;
     [SerializeField] Animator animator;
     [SerializeField] Rigidbody2D rigidBody;
+    [SerializeField] Transform sealevel;
+    [SerializeField] Text depthMeter;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,20 +40,6 @@ public class PlayerMovement : MonoBehaviour
 
         CheckIdle(movementHorizontal, movementVertical);
         animator.SetFloat("swimming", Mathf.Abs(movementHorizontal));
-
-        //float deltaX = Input.GetAxis("Horizontal") * movementSpeed;
-        //float deltaZ = Input.GetAxis("Vertical") * diveSpeed;
-        //Vector3 movement = new Vector3(deltaX, 0, deltaZ);
-        //// Returns a copy of vector with its magnitude clamped to maxLength
-        //movement = Vector3.ClampMagnitude(movement, movementSpeed);
-
-        //movement *= Time.deltaTime;
-        //// Transforms direction from local space to world space.
-        //movement = transform.TransformDirection(movement);
-        //rigidBody.AddForce(movement);
-
-        //transform.position += new Vector3(movementHorizontal, 0, 0) * Time.deltaTime * movementSpeed;
-        //transform.position += new Vector3(0, movementVertical, 0) * Time.deltaTime * diveSpeed;
     }
 
     private void FixedUpdate()
@@ -60,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         float moveY = Input.GetAxis("Vertical");
         // Generates the thrust forward to your rigidbody
         rigidBody.velocity = new Vector2(moveX * movementSpeed, moveY * diveSpeed);
+        UpdateDepthMeter();
     }
 
     private void Flip()
@@ -89,6 +79,10 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isIdle", isIdle);
     }
 
+    private void UpdateDepthMeter()
+    {
+        depthMeter.text = (int)(sealevel.position.y - transform.position.y) + "m";
+    }
     public void BoostSpeed()
     {
         StartCoroutine(IncreaseSpeedAndReset());
