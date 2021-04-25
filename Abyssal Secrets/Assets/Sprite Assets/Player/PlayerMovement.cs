@@ -35,17 +35,6 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            animator.SetBool("isShift", true);
-            movementSpeed = baseSpeed * sprintSpeedMult;
-        }
-        else
-        {
-            animator.SetBool("isShift", false);
-            movementSpeed = baseSpeed;
-        }
-
         CheckIdle(movementHorizontal, movementVertical);
         animator.SetFloat("swimming", Mathf.Abs(movementHorizontal));
 
@@ -98,6 +87,20 @@ public class PlayerMovement : MonoBehaviour
             isIdle = true;
         }
         animator.SetBool("isIdle", isIdle);
+    }
+
+    public void BoostSpeed()
+    {
+        StartCoroutine(IncreaseSpeedAndReset());
+    }
+
+    private IEnumerator IncreaseSpeedAndReset()
+    {
+        movementSpeed = baseSpeed * sprintSpeedMult;
+
+        yield return new WaitForSeconds(2.5f);
+
+        movementSpeed = baseSpeed;
     }
 }
 

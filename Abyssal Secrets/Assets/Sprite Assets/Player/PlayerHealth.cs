@@ -20,4 +20,9 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
         healthBar.SetHealth(currentHealth);
     }
+
+    public bool IsDead()
+    {
+        return currentHealth <= 0;
+    }
 }

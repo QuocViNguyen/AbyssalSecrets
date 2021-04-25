@@ -21,6 +21,8 @@ public class SpeedBoost : Item
     public override void Use()
     {
         Debug.Log("SpeedBoost used");
+        AudioManager.Instance.PlaySpeedBoost();
+        Object.FindObjectOfType<PlayerMovement>().BoostSpeed();
     }
 }
 
@@ -30,7 +32,10 @@ public class Shield : Item
 
     public override void Use()
     {
-        Object.Instantiate(Resources.Load("Shield"));
+        AudioManager.Instance.PlayShieldActivation();
+        Transform playerTransform = Object.FindObjectOfType<PlayerHealth>().transform;
+        GameObject shield = (GameObject)Object.Instantiate(Resources.Load("Shield"), playerTransform);
+        shield.transform.localPosition = new Vector3(0.04f, 0.07f);
     }
 }
 
