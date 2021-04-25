@@ -14,7 +14,6 @@ public class PlayerMoney : MonoBehaviour
         if (PlayerPrefs.HasKey(Key))
         {
             money = PlayerPrefs.GetInt(Key);
-            Debug.Log(money);
         }
         moneyText.text = money.ToString();
     }

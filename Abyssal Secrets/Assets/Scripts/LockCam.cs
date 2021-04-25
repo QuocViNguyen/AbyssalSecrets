@@ -5,20 +5,49 @@ using UnityEngine;
 public class LockCam : MonoBehaviour
 {
     [SerializeField] Transform player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Transform topRight;
+    [SerializeField] Transform bottomLeft;
+
+    private float widthOffset = 28.5f;
+    private float heightOffset = 15.0f;
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        float newX = transform.position.x;
+        float newY = transform.position.y;
+        if (IsInXBound())
+        {
+            newX = Mathf.Lerp(transform.position.x, player.position.x, 0.1f);
+        }
+
+        if (IsInYBound())
+        {
+            newY = Mathf.Lerp(transform.position.y, player.position.y, 0.1f);
+        }
+
+        transform.position = new Vector3(newX, newY, transform.position.z);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private bool IsInXBound()
     {
-        
+        float playerX = player.position.x;
+        bool notPassLeftEdge = playerX - widthOffset >= bottomLeft.position.x;
+        bool notPassRightEdge = playerX + widthOffset <= topRight.position.x;
+        if (notPassLeftEdge && notPassRightEdge)
+            return true;
+
+        return false;
+    }
+
+    private bool IsInYBound()
+    {
+        float playerY = player.position.y;
+        bool notPassTopEdge = playerY + heightOffset <= topRight.position.y;
+        bool notPassBottomEdge = playerY - heightOffset >= bottomLeft.position.y;
+        if (notPassTopEdge && notPassBottomEdge)
+            return true;
+
+        return false;
     }
 }
