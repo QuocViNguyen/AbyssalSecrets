@@ -301,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.077988, y: -2.770452, z: -10}
+  m_LocalPosition: {x: -2.931, y: -2.7672, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -702,10 +702,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 692542069}
-    - target: {fileID: 5237219001267091300, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5237219001267091301, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
       propertyPath: m_Name
       value: player
@@ -1025,6 +1021,26 @@ PrefabInstance:
     - target: {fileID: 1724608326871536961, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724608327512018498, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00012207031
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724608327619253441, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724608327619253441, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -988.5532
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724608327619253441, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724608327619253441, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 477.4485
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
