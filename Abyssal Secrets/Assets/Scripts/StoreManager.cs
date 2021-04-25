@@ -18,6 +18,7 @@ public class StoreManager : MonoBehaviour
     [SerializeField] Text runePriceTxt;
 
     [SerializeField] ItemManager itemManager;
+    [SerializeField] PlayerMoney playerMoney;
 
     private int bootPrice = 10; 
     private int scentPrice = 15; 
@@ -37,51 +38,46 @@ public class StoreManager : MonoBehaviour
 
     public void BuyBoot()
     {
-        if (!CheckMoney(bootPrice))
+        if (!playerMoney.CheckEnoughMoney(bootPrice))
             return;
 
         if (itemManager.AddItem(new SpeedBoost(speedBoostSprite)))
-            return;
-    }
-
-    private bool CheckMoney(int price)
-    {
-        return true;
+            playerMoney.UseMoney(bootPrice);
     }
 
     public void BuyScent()
     {
-        if (!CheckMoney(scentPrice))
+        if (!playerMoney.CheckEnoughMoney(scentPrice))
             return;
 
         if (itemManager.AddItem(new SmellyBomb(smellyBombSprite)))
-            return;
+            playerMoney.UseMoney(scentPrice);
     }
 
     public void BuyMeat()
     {
-        if (!CheckMoney(meatPrice))
+        if (!playerMoney.CheckEnoughMoney(meatPrice))
             return;
 
         if (itemManager.AddItem(new Meat(meatSprite)))
-            return;
+            playerMoney.UseMoney(meatPrice);
     }
 
     public void BuyShield()
     {
-        if (!CheckMoney(shieldPrice))
+        if (!playerMoney.CheckEnoughMoney(shieldPrice))
             return;
 
         if (itemManager.AddItem(new Shield(shieldSprite)))
-            return;
+            playerMoney.UseMoney(shieldPrice);
     }
 
     public void BuyRune()
     {
-        if (!CheckMoney(runePrice))
+        if (!playerMoney.CheckEnoughMoney(runePrice))
             return;
 
         if (itemManager.AddItem(new Rune(runeSprite)))
-            return;
+            playerMoney.UseMoney(runePrice);
     }
 }
