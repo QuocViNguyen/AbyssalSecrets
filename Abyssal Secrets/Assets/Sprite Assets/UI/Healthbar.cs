@@ -24,7 +24,7 @@ public class Healthbar : MonoBehaviour
         slider.value = maxHealth;
     }
 
-    public void SetHealth( int health)
+    public void SetHealth(float health)
     {
         slider.value = health;
     }
