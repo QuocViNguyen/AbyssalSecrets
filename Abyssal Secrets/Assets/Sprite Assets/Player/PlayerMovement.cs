@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFlippedX;
     private bool isIdle;
     [SerializeField] Animator animator;
+    [SerializeField] Rigidbody2D rigidBody;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,8 +48,29 @@ public class PlayerMovement : MonoBehaviour
 
         CheckIdle(movementHorizontal, movementVertical);
         animator.SetFloat("swimming", Mathf.Abs(movementHorizontal));
-        transform.position += new Vector3(movementHorizontal, 0, 0) * Time.deltaTime * movementSpeed;
-        transform.position += new Vector3(0, movementVertical, 0) * Time.deltaTime * diveSpeed;
+
+        //float deltaX = Input.GetAxis("Horizontal") * movementSpeed;
+        //float deltaZ = Input.GetAxis("Vertical") * diveSpeed;
+        //Vector3 movement = new Vector3(deltaX, 0, deltaZ);
+        //// Returns a copy of vector with its magnitude clamped to maxLength
+        //movement = Vector3.ClampMagnitude(movement, movementSpeed);
+
+        //movement *= Time.deltaTime;
+        //// Transforms direction from local space to world space.
+        //movement = transform.TransformDirection(movement);
+        //rigidBody.AddForce(movement);
+
+        //transform.position += new Vector3(movementHorizontal, 0, 0) * Time.deltaTime * movementSpeed;
+        //transform.position += new Vector3(0, movementVertical, 0) * Time.deltaTime * diveSpeed;
+    }
+
+    private void FixedUpdate()
+    {
+        // Much more efficient than creating your own input
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Vertical");
+        // Generates the thrust forward to your rigidbody
+        rigidBody.velocity = new Vector2(moveX * movementSpeed, moveY * diveSpeed);
     }
 
     private void Flip()
