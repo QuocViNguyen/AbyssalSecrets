@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float baseSpeed = 40;
-    public float movementSpeed = 40;
+    [SerializeField] float baseSpeed = 12;
+    private float movementSpeed;
     private float sprintSpeedMult = 2;
-    public float diveSpeed = 40;
+    private float diveSpeed = 15;
     private bool isFlippedX;
     private bool isIdle;
     [SerializeField] Animator animator;
@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isFlippedX = false;
         isIdle = true;
+        movementSpeed = baseSpeed;
     }
 
     // Update is called once per frame
