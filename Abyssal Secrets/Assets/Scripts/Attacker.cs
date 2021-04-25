@@ -29,6 +29,11 @@ public class Attacker : MonoBehaviour
         {
             targetHealth = collision.gameObject.GetComponent<PlayerHealth>();
         }
+        if (gameObject.tag == "Bomb")
+        {
+            collision.gameObject.GetComponent<PlayerHealth>().OnDamageTaken(damage);
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
