@@ -32,4 +32,9 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.PlayOneShot(activateShield);
     }
+
+    public void PlayOpenChest()
+    {
+        audioSource.PlayOneShot(openChest);
+    }
 }
