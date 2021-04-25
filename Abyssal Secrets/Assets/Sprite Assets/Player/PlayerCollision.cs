@@ -24,5 +24,10 @@ public class PlayerCollision : MonoBehaviour
             playerHealth.OnHealthChanged(playerHealth.currentHealth-3);
             yield return new WaitForSeconds(1);   //Wait
         }
+
+        if (collision.gameObject.layer == 8)
+        {
+            collision.gameObject.SetActive(false);
+        }
     }
 }
