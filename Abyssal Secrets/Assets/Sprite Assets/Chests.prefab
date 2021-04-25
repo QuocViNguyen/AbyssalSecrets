@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6523033778014854669}
   - component: {fileID: 6523033778014854671}
   - component: {fileID: 6523033778014854668}
+  - component: {fileID: 4077287322067547022}
   m_Layer: 0
   m_Name: chest2_0 (1)
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +110,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &4077287322067547022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6523033778014854674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f5d9ebfbe63b242af4c9314e86c9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: default name
+  description: default description
 --- !u!1 &6523033778276227238
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,9 +135,10 @@ GameObject:
   - component: {fileID: 6523033778276227233}
   - component: {fileID: 6523033778276227235}
   - component: {fileID: 6523033778276227232}
+  - component: {fileID: 4077287323111725812}
   m_Layer: 0
   m_Name: chest2_0 (2)
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,6 +234,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &4077287323111725812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6523033778276227238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f5d9ebfbe63b242af4c9314e86c9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: default name
+  description: default description
 --- !u!1 &6523033778326582974
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,9 +293,10 @@ GameObject:
   - component: {fileID: 6523033779480702864}
   - component: {fileID: 6523033779480702866}
   - component: {fileID: 6523033779480702867}
+  - component: {fileID: 4077287323383437759}
   m_Layer: 0
   m_Name: chest2_0 (3)
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -361,6 +392,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &4077287323383437759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6523033779480702865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f5d9ebfbe63b242af4c9314e86c9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Six tokens
+  description: "Little tokens seemingly made of various metals. Various animals are
+    engraved on one side, but they all share someone\u2019s head on the other\u2026
+    probably currency, possibly ammunition."
 --- !u!1 &6523033779492984662
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,9 +419,10 @@ GameObject:
   - component: {fileID: 6523033779492984657}
   - component: {fileID: 6523033779492984659}
   - component: {fileID: 6523033779492984656}
+  - component: {fileID: 4077287322551043817}
   m_Layer: 0
   m_Name: chest2_0
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -470,3 +518,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &4077287322551043817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6523033779492984662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f5d9ebfbe63b242af4c9314e86c9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  description: 

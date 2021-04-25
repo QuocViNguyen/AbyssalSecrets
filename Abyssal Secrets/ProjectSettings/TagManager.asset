@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Attacker
   - Bomb
+  - Chest
   layers:
   - Default
   - TransparentFX
