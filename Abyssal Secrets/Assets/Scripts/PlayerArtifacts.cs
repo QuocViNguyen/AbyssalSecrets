@@ -23,8 +23,8 @@ public class PlayerArtifacts : MonoBehaviour
     }
 
     public void AddArtifact(Artifact artifact)
-    {   
-        audioSource.Play();
+    {
+        AudioManager.Instance.PlayOpenChest();
         displayerName.text = artifact.Name;
         displayerDesc.text = artifact.Description;
         Artifacts.Add(artifact);
