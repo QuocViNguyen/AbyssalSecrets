@@ -15,12 +15,13 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioClip openChest;
     [SerializeField] AudioClip mineExplosion;
+    [SerializeField] AudioClip itemBought;
 
     [SerializeField] AudioClip activateShield;
     [SerializeField] AudioClip speedBoost;
-    [SerializeField] AudioClip itemBought;
     [SerializeField] AudioClip smellyBombExplosion;
     [SerializeField] AudioClip runeExplosion;
+    [SerializeField] AudioClip meatThrowing;
 
 
     private AudioSource sfxSource;
@@ -34,8 +35,15 @@ public class AudioManager : MonoBehaviour
     public void PlayStage1()
     {
         musicSource.volume = 1f;
-        musicSource.clip = stage1;
-        musicSource.Play();
+        if (musicSource.isPlaying)
+        {
+            PlayMusicWithFade(stage1);
+        }
+        else
+        {
+            musicSource.clip = stage1;
+            musicSource.Play();
+        }
     }
 
     public void PlayStage2()
@@ -115,5 +123,20 @@ public class AudioManager : MonoBehaviour
     public void PlayMineExplosion()
     {
         sfxSource.PlayOneShot(mineExplosion);
+    }
+
+    public void PlayThrowingMeat()
+    {
+        sfxSource.PlayOneShot(meatThrowing);
+    }
+
+    public void PlaySmellyBomb()
+    {
+        sfxSource.PlayOneShot(smellyBombExplosion);
+    }
+
+    public void PlayRuneExplosion()
+    {
+        sfxSource.PlayOneShot(runeExplosion);
     }
 }

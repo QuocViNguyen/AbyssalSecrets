@@ -24,9 +24,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (state == GameState.Playing && playerHealth.IsDead())
-        {
-            uiManager.ShowGameOver();
-        }
+        
     }
 }
