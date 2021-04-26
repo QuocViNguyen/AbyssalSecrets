@@ -2465,7 +2465,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1769008511}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 636335617247715305}
+        m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
+        m_MethodName: RestartScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1769008511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2700,11 +2712,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5237219001267091307, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43
+      value: 62.3
       objectReference: {fileID: 0}
     - target: {fileID: 5237219001267091307, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -223.5
+      value: -287.3
       objectReference: {fileID: 0}
     - target: {fileID: 5237219001267091307, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2761,6 +2773,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5237219001267091307, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
   m_PrefabInstance: {fileID: 33715427241674381}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &636335617247715305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3477984532987331260, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
+  m_PrefabInstance: {fileID: 33715427241674381}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636335617247715302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd60acd20d8ada64d9a092c78a98dea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &636335617247715306
 MonoBehaviour:
   m_ObjectHideFlags: 0

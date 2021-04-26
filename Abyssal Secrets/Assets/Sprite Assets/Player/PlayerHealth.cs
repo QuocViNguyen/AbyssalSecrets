@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -18,11 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (currentHealth == 0)
-        {
-            gameOver.SetActive(true);
-            Time.timeScale = 0;
-        }
+
     }
 
     public void OnDamageTaken(float damage)
@@ -34,5 +31,21 @@ public class PlayerHealth : MonoBehaviour
     public bool IsDead()
     {
         return currentHealth <= 0;
+    }
+
+    public void RestartScene()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("PlayScene");
+       
+    }
+
+    public void Death()
+    {
+        if (currentHealth == 0)
+        {
+            gameOver.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }

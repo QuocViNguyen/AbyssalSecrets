@@ -6,6 +6,7 @@ public class mineController : MonoBehaviour
 {
 
     private Animator animator;
+    private PlayerHealth playerHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class mineController : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             animator.SetBool("explode", true);
         }
     }
@@ -27,7 +29,8 @@ public class mineController : MonoBehaviour
     }
 
     private void DeleteMine()
-    {
+    {   
         Destroy(gameObject);
+        playerHealth.Death();
     }
 }
