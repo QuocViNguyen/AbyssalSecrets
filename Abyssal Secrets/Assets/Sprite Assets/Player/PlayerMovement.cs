@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateDepthMeter()
     {
-        depthMeter.text = (int)(sealevel.position.y - transform.position.y) + "m";
+        depthMeter.text = (int)((sealevel.position.y - transform.position.y)*0.08)+ "m";
     }
     public void BoostSpeed()
     {
