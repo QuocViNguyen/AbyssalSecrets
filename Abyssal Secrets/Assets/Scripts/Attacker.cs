@@ -32,7 +32,7 @@ public class Attacker : MonoBehaviour
         if (gameObject.tag == "Bomb")
         {
             collision.gameObject.GetComponent<PlayerHealth>().OnDamageTaken(damage);
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 
