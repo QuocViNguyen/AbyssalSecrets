@@ -44,6 +44,10 @@ public class SmellyBomb : Item
 
     public override void Use()
     {
+        Transform playerTransform = Object.FindObjectOfType<PlayerHealth>().transform;
+        GameObject explosion = (GameObject)Object.Instantiate(Resources.Load("SmellyExplosion"));
+        explosion.transform.position = playerTransform.position;
+
         AudioManager.Instance.PlaySmellyBomb();
     }
 }
