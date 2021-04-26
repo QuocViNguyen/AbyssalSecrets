@@ -4,26 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] UIManager uiManager;
-    [SerializeField] PlayerHealth playerHealth;
+    public static GameManager Instance;
 
-    private enum GameState
-    {
-        Waiting,
-        Playing,
-        Over
-    }
-    private GameState state;
+    public bool GameStarted { get; set; }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instance = this;
     }
 }

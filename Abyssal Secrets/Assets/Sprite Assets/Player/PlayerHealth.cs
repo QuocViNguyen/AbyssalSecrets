@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void OnDamageTaken(float damage)
     {
-        if (shieldActivated)
+        if (shieldActivated || !GameManager.Instance.GameStarted)
             return;
 
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth == 0)
         {
+            GameManager.Instance.GameStarted = false;
             gameOver.SetActive(true);
             Time.timeScale = 0;
             AudioManager.Instance.StopPlaying();

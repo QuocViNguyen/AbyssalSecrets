@@ -71,6 +71,12 @@ public class AudioManager : MonoBehaviour
         PlayMusicWithFade(growl);
     }
 
+    public void PlayGameOver()
+    {
+        musicSource.volume = 1.0f;
+        PlayMusicWithFade(gameOver);
+    }
+
     public void StopPlaying()
     {
         musicSource.Stop();

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerArtifacts : MonoBehaviour
 {
     List<Artifact> artifacts;
-    private  AudioSource audioSource;
     [SerializeField] Text displayerName;
     [SerializeField] Text displayerDesc;
     [SerializeField] Text artifactTracker;
@@ -15,7 +14,6 @@ public class PlayerArtifacts : MonoBehaviour
     void Start()
     {
         artifacts = new List<Artifact>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,9 +21,9 @@ public class PlayerArtifacts : MonoBehaviour
     {
         if (artifacts.Count == 7)
         {
-            Time.timeScale = 0;
-            AudioManager.Instance.StopPlaying();
-            GetComponent<AudioSource>()?.Stop();
+            GameManager.Instance.GameStarted = false;
+            GetComponent<AudioSource>().Stop();
+            AudioManager.Instance.PlayGameOver();
             winPanel.SetActive(true);
         }
     }

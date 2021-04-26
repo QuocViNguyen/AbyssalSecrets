@@ -8,19 +8,41 @@ public class ItemManager : MonoBehaviour
     [SerializeField] Image[] itemImages;
 
     private const int MaxItemSlots = 5;
-    private Item[] items = new Item[MaxItemSlots];
-    private int slotCount = 0;
+    private static Item[] items = new Item[MaxItemSlots];
+    private static int slotCount = 0;
     [SerializeField] SharkFollower shark;
 
     private void Awake()
     {
-        foreach (Image itemImage in itemImages)
-            itemImage.gameObject.SetActive(false);
+        InitSlots();
+    }
+
+    private void InitSlots()
+    {
+        var tempItems = items;
+        items = new Item[MaxItemSlots];
+        slotCount = 0;
+        for (int i = 0; i < MaxItemSlots; i++)
+        {
+            if (tempItems[i] != null)
+            {
+                items[slotCount] = tempItems[i];
+                itemImages[slotCount].sprite = items[slotCount].ItemSprite;
+                itemImages[slotCount].gameObject.SetActive(true);
+                slotCount++;
+            }
+        }
+
+        for (int i = slotCount; i < MaxItemSlots; i++)
+            itemImages[i].gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.Instance.GameStarted)
+            return;
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             UseItem(0);
@@ -45,7 +67,7 @@ public class ItemManager : MonoBehaviour
 
     private void UseItem(int slotIndex)
     {
-        if (slotIndex < slotCount && itemImages[slotIndex].gameObject.activeSelf)
+        if (slotIndex < slotCount && itemImages[slotIndex] != null)
         {
             items[slotIndex].Use();
             itemImages[slotIndex].gameObject.SetActive(false);
@@ -53,6 +75,8 @@ public class ItemManager : MonoBehaviour
             {
                 shark.ToTheDen();
             }
+
+            items[slotIndex] = null;
         }
     }
 

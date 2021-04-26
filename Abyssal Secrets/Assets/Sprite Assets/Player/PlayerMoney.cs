@@ -11,10 +11,10 @@ public class PlayerMoney : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (PlayerPrefs.HasKey(Key))
-        {
-            money = PlayerPrefs.GetInt(Key);
-        }
+        //if (PlayerPrefs.HasKey(Key))
+        //{
+        //    money = PlayerPrefs.GetInt(Key);
+        //}
         moneyText.text = money.ToString();
     }
 
