@@ -8,6 +8,7 @@ public class SharkFollower : MonoBehaviour
     private Transform target;
     private Vector3 lastPosition;
     private float chaseSpeed = 0.005f;
+    private float returnSpeed = 0.001f;
     [SerializeField] Transform sharkDen;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class SharkFollower : MonoBehaviour
         }
         else
         {
-            transform.parent.position = Vector2.Lerp(transform.parent.position, lastPosition, 0.001f);
+            transform.parent.position = Vector2.Lerp(transform.parent.position, lastPosition, returnSpeed);
         }
     }
 
@@ -38,5 +39,15 @@ public class SharkFollower : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         isInRange = false;
+    }
+
+    public void ToTheDen()
+    {
+        if (isInRange)
+        {
+            isInRange = !isInRange;
+            lastPosition = sharkDen.position;
+            returnSpeed = chaseSpeed * 1.5f;
+        }
     }
 }

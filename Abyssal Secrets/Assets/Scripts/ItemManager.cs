@@ -10,7 +10,7 @@ public class ItemManager : MonoBehaviour
     private const int MaxItemSlots = 5;
     private Item[] items = new Item[MaxItemSlots];
     private int slotCount = 0;
-    [SerializeField] Follower shark;
+    [SerializeField] SharkFollower shark;
 
     private void Awake()
     {
@@ -49,6 +49,10 @@ public class ItemManager : MonoBehaviour
         {
             items[slotIndex].Use();
             itemImages[slotIndex].gameObject.SetActive(false);
+            if (items[slotIndex] is SmellyBomb)
+            {
+                shark.ToTheDen();
+            }
         }
     }
 

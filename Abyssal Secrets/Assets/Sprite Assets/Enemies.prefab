@@ -490,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1890165062359422073}
   - component: {fileID: 1890165062359422078}
-  - component: {fileID: 710710779898215461}
+  - component: {fileID: 1457872440}
   m_Layer: 0
   m_Name: Detector
   m_TagString: Untagged
@@ -528,7 +528,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.59
---- !u!114 &710710779898215461
+--- !u!114 &1457872440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -537,9 +537,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1890165062359422072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1670244aa6655424680713c32f0cbd82, type: 3}
+  m_Script: {fileID: 11500000, guid: a5817f584c77c0e40bad0e1a64a7317c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sharkDen: {fileID: 3763815437934104835}
 --- !u!1 &3763815437934104832
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,49 +565,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3763815437934104832}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.59490013, y: -2.5348952, z: -0.88933444}
+  m_LocalPosition: {x: 0.572, y: -2.457, z: -0.88933444}
   m_LocalScale: {x: -0.011285045, y: 0.011089726, z: 0.012614565}
   m_Children: []
   m_Father: {fileID: 7262547594723712809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3763815438087284777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6944709215512897794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5817f584c77c0e40bad0e1a64a7317c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharkDen: {fileID: 3763815437934104835}
---- !u!114 &3763815439147952316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5430286475616714505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1670244aa6655424680713c32f0cbd82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3763815439116575721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6569490467764680560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1670244aa6655424680713c32f0cbd82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4533931833440171680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1731,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   attackRate: 0.75
+--- !u!114 &3763815439147952316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5430286475616714505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1670244aa6655424680713c32f0cbd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6494756310608131955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,6 +1888,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   attackRate: 0.75
+--- !u!114 &3763815439116575721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569490467764680560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1670244aa6655424680713c32f0cbd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2137052134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6944709215512897794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1670244aa6655424680713c32f0cbd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7262547594723712810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +1925,8 @@ GameObject:
   - component: {fileID: 7262547594723712811}
   - component: {fileID: 7262547595889793820}
   - component: {fileID: 7262547595889793821}
+  - component: {fileID: 1662731632501178701}
+  - component: {fileID: 7108375968390852725}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Untagged
@@ -2048,6 +2050,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   attackRate: 1.3
+--- !u!70 &1662731632501178701
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7262547594723712810}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.4, y: 0.22}
+  m_Direction: 1
+--- !u!114 &7108375968390852725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7262547594723712810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5344e2055ac459aaff94efa54a168a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 35
+  attackRate: 1.2
 --- !u!1 &7262547596103791156
 GameObject:
   m_ObjectHideFlags: 0
