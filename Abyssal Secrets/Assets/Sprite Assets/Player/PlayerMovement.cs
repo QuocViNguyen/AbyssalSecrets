@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float baseSpeed = 12;
     private float movementSpeed;
     private float sprintSpeedMult = 2;
-    private float diveSpeed = 12;
     private bool isFlippedX;
     private bool isIdle;
     [SerializeField] Animator animator;
@@ -47,8 +46,14 @@ public class PlayerMovement : MonoBehaviour
         // Much more efficient than creating your own input
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
+        if (Mathf.Abs(moveX) > 0 && Mathf.Abs(moveY) > 0)
+        {
+            moveX = Mathf.Min(moveX, 0.65f);
+            moveY = Mathf.Min(moveY, 0.65f);
+        }
+
         // Generates the thrust forward to your rigidbody
-        rigidBody.velocity = new Vector2(moveX * movementSpeed, moveY * diveSpeed);
+        rigidBody.velocity = new Vector2(moveX * movementSpeed, moveY * movementSpeed);
         UpdateDepthMeter();
     }
 
@@ -92,7 +97,8 @@ public class PlayerMovement : MonoBehaviour
     {
         movementSpeed = baseSpeed * sprintSpeedMult;
 
-        yield return new WaitForSeconds(3.5f);
+
+        yield return new WaitForSeconds(3f);
 
         movementSpeed = baseSpeed;
     }
