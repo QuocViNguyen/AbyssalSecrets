@@ -11,10 +11,17 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip stage2;
     [SerializeField] AudioClip stage3;
     [SerializeField] AudioClip boss;
+    [SerializeField] AudioClip gameOver;
+
     [SerializeField] AudioClip openChest;
+    [SerializeField] AudioClip mineExplosion;
+
     [SerializeField] AudioClip activateShield;
     [SerializeField] AudioClip speedBoost;
     [SerializeField] AudioClip itemBought;
+    [SerializeField] AudioClip smellyBombExplosion;
+    [SerializeField] AudioClip runeExplosion;
+
 
     private AudioSource sfxSource;
 
@@ -27,7 +34,8 @@ public class AudioManager : MonoBehaviour
     public void PlayStage1()
     {
         musicSource.volume = 1f;
-        PlayMusicWithFade(stage1);
+        musicSource.clip = stage1;
+        musicSource.Play();
     }
 
     public void PlayStage2()
@@ -44,11 +52,17 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBossStage()
     {
-        musicSource.volume = 1f;
+        musicSource.volume = 0.7f;
         PlayMusicWithFade(boss);
     }
 
-    private void PlayMusicWithFade(AudioClip newClip, float transitionTime = 1.0f)
+    public void PlayGameOver()
+    {
+        musicSource.volume = 1f;
+        PlayMusicWithFade(gameOver);
+    }
+
+    private void PlayMusicWithFade(AudioClip newClip, float transitionTime = 0.7f)
     {
         if (newClip == musicSource.clip)
             return;
@@ -97,5 +111,10 @@ public class AudioManager : MonoBehaviour
     public void PlayItemBought()
     {
         sfxSource.PlayOneShot(itemBought);
+    }
+
+    public void PlayMineExplosion()
+    {
+        sfxSource.PlayOneShot(mineExplosion);
     }
 }

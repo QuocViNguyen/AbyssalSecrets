@@ -19,13 +19,8 @@ public class mineController : MonoBehaviour
         {
             playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             animator.SetBool("explode", true);
+            AudioManager.Instance.PlayMineExplosion();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void DeleteMine()
