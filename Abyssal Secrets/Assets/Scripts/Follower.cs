@@ -8,7 +8,7 @@ public class Follower : MonoBehaviour
     private Transform target;
     private Vector3 lastPosition;
 
-    private float chasingSpeed = 12f;
+    private float chasingSpeed = 11f;
     private float returnSpeed = 8f;
 
     // Start is called before the first frame update

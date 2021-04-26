@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBossStage()
     {
-        musicSource.volume = 0.6f;
+        musicSource.volume = 0.5f;
         PlayMusicWithFade(boss);
     }
 
