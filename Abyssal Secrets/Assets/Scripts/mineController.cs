@@ -17,7 +17,6 @@ public class mineController : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             animator.SetBool("explode", true);
             AudioManager.Instance.PlayMineExplosion();
         }
@@ -26,6 +25,5 @@ public class mineController : MonoBehaviour
     private void DeleteMine()
     {   
         Destroy(gameObject);
-        playerHealth.Death();
     }
 }

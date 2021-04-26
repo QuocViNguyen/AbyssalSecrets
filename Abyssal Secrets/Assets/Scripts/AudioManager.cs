@@ -56,10 +56,9 @@ public class AudioManager : MonoBehaviour
         PlayMusicWithFade(boss);
     }
 
-    public void PlayGameOver()
+    public void StopPlaying()
     {
-        musicSource.volume = 1f;
-        PlayMusicWithFade(gameOver);
+        musicSource.Stop();
     }
 
     private void PlayMusicWithFade(AudioClip newClip, float transitionTime = 0.7f)

@@ -17,15 +17,18 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    private void Update()
-    {
-
-    }
-
     public void OnDamageTaken(float damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
         healthBar.SetHealth(currentHealth);
+
+        if (currentHealth == 0)
+        {
+            gameOver.SetActive(true);
+            Time.timeScale = 0;
+            AudioManager.Instance.StopPlaying();
+            GetComponent<AudioSource>().Stop();
+        }
     }
 
     public bool IsDead()
@@ -37,15 +40,5 @@ public class PlayerHealth : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("PlayScene");
-       
-    }
-
-    public void Death()
-    {
-        if (currentHealth == 0)
-        {
-            gameOver.SetActive(true);
-            Time.timeScale = 0;
-        }
     }
 }
