@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip stage2;
     [SerializeField] AudioClip stage3;
     [SerializeField] AudioClip boss;
+    [SerializeField] AudioClip growl;
     [SerializeField] AudioClip gameOver;
 
     [SerializeField] AudioClip openChest;
@@ -60,8 +61,14 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBossStage()
     {
-        musicSource.volume = 0.7f;
+        musicSource.volume = 0.6f;
         PlayMusicWithFade(boss);
+    }
+
+    public void PlayGrowl()
+    {
+        musicSource.volume = 0.7f;
+        PlayMusicWithFade(growl);
     }
 
     public void StopPlaying()

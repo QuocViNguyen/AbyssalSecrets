@@ -7,8 +7,8 @@ public class SharkFollower : MonoBehaviour
     private bool isInRange;
     private Transform target;
     private Vector3 lastPosition;
-    private float chasingSpeed = 15f;
-    private float returnSpeed = 12f;
+    private float chasingSpeed = 14.5f;
+    private float returnSpeed = 17;
 
     [SerializeField] Transform sharkDen;
     // Start is called before the first frame update

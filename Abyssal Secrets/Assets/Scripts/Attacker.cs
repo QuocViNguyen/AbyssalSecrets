@@ -9,17 +9,32 @@ public class Attacker : MonoBehaviour
 
     private PlayerHealth targetHealth;
     private float lastAttackTime;
+    private bool faded;
+    private SpriteRenderer spriteRenderer;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (targetHealth != null)
+        if (targetHealth != null && !faded)
         {
             if (Time.time - lastAttackTime >= attackRate)
             {
                 lastAttackTime = Time.time;
                 targetHealth.OnDamageTaken(damage);
             }
+        }
+
+        if (faded)
+        {
+            Color color = spriteRenderer.color;
+            spriteRenderer.color = Color.Lerp(color, new Color(color.r, color.g, color.b, 0), Time.deltaTime * 0.3f);
+            if (spriteRenderer.color.a == 0.0f)
+                Destroy(gameObject);
         }
     }
 
@@ -46,6 +61,14 @@ public class Attacker : MonoBehaviour
 
     public void OnExplosion()
     {
-        Destroy(gameObject);
+        if (tag == "Kraken")
+        {
+            AudioManager.Instance.PlayGrowl();
+            faded = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

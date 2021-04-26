@@ -12,6 +12,7 @@ TagManager:
   - BossMusicTrigger
   - MusicTrigger
   - Boundary
+  - Kraken
   layers:
   - Default
   - TransparentFX
