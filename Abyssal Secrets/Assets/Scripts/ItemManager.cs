@@ -10,6 +10,7 @@ public class ItemManager : MonoBehaviour
     private const int MaxItemSlots = 5;
     private Item[] items = new Item[MaxItemSlots];
     private int slotCount = 0;
+    [SerializeField] Follower shark;
 
     private void Awake()
     {
