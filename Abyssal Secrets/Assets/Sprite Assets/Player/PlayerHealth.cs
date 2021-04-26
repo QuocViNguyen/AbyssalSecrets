@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth = 100;
+    [SerializeField] GameObject gameOver;
     public float currentHealth;
 
     [SerializeField] Healthbar healthBar;
@@ -13,6 +14,15 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+    }
+
+    private void Update()
+    {
+        if (currentHealth == 0)
+        {
+            gameOver.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void OnDamageTaken(float damage)
