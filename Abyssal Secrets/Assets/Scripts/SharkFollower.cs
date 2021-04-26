@@ -33,8 +33,6 @@ public class SharkFollower : MonoBehaviour
     {
         isInRange = true;
         target = collision.gameObject.transform;
-        Vector3 lastPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        lastPosition = lastPos;
     }
 
     private void OnTriggerExit2D(Collider2D collision)

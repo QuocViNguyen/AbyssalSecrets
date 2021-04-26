@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float baseSpeed = 12;
     private float movementSpeed;
     private float sprintSpeedMult = 2;
-    private float diveSpeed = 15;
+    private float diveSpeed = 12;
     private bool isFlippedX;
     private bool isIdle;
     [SerializeField] Animator animator;

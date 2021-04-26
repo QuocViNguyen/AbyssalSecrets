@@ -20,11 +20,11 @@ public class Follower : MonoBehaviour
     { 
         if (isInRange)
         {
-            transform.parent.position = Vector2.Lerp(transform.parent.position, target.position, 0.003f);
+            transform.parent.position = Vector2.Lerp(transform.parent.position, target.position, 0.00297f);
         }
         else
         {
-            transform.parent.position = Vector2.Lerp(transform.parent.position, lastPosition, 0.001f);
+            transform.parent.position = Vector2.Lerp(transform.parent.position, lastPosition, 0.0015f);
         }
     }
 
@@ -32,8 +32,7 @@ public class Follower : MonoBehaviour
     {
         isInRange = true;
         target = collision.gameObject.transform;
-        Vector3 lastPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        lastPosition = lastPos;
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

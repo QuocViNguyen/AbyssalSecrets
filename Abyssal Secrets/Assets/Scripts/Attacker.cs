@@ -28,12 +28,12 @@ public class Attacker : MonoBehaviour
         if (collision.tag == "Player")
         {
             targetHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (gameObject.tag == "Bomb")
+            {
+                collision.gameObject.GetComponent<PlayerHealth>().OnDamageTaken(damage);
+            }
         }
-        if (gameObject.tag == "Bomb")
-        {
-            collision.gameObject.GetComponent<PlayerHealth>().OnDamageTaken(damage);
-            //gameObject.SetActive(false);
-        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -42,5 +42,10 @@ public class Attacker : MonoBehaviour
         {
             targetHealth = null;
         }
+    }
+
+    public void OnExplosion()
+    {
+        Destroy(gameObject);
     }
 }
