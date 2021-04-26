@@ -11,6 +11,7 @@ TagManager:
   - MusicTrigger2
   - BossMusicTrigger
   - MusicTrigger
+  - Boundary
   layers:
   - Default
   - TransparentFX

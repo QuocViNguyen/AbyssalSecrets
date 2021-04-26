@@ -57,6 +57,13 @@ public class Meat : Item
         Transform playerTransform = Object.FindObjectOfType<PlayerHealth>().transform;
         GameObject meat = (GameObject)Object.Instantiate(Resources.Load("Meat"));
         meat.transform.position = playerTransform.position;
+
+        Vector3 shootDirection = Input.mousePosition;
+        shootDirection.z = 0.0f;
+        shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+        shootDirection = shootDirection - playerTransform.position;
+        meat.GetComponent<MeatHandler>().FollowMouseDirection(shootDirection);
+
         AudioManager.Instance.PlayThrowingMeat();
     }
 }
