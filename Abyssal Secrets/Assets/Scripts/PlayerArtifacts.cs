@@ -10,6 +10,7 @@ public class PlayerArtifacts : MonoBehaviour
     [SerializeField] Text displayerName;
     [SerializeField] Text displayerDesc;
     [SerializeField] Text artifactTracker;
+    [SerializeField] GameObject winPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,13 @@ public class PlayerArtifacts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (artifacts.Count == 7)
+        {
+            Time.timeScale = 0;
+            AudioManager.Instance.StopPlaying();
+            GetComponent<AudioSource>()?.Stop();
+            winPanel.SetActive(true);
+        }
     }
 
     public void AddArtifact(Artifact artifact)
