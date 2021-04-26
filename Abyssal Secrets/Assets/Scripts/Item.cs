@@ -74,6 +74,10 @@ public class Rune : Item
 
     public override void Use()
     {
+        Transform playerTransform = Object.FindObjectOfType<PlayerHealth>().transform;
+        GameObject runExplosion = (GameObject)Object.Instantiate(Resources.Load("RuneExplosion"));
+        runExplosion.transform.position = playerTransform.position;
+
         AudioManager.Instance.PlayRuneExplosion();
     }
 }
