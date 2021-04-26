@@ -10,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
 
     [SerializeField] Healthbar healthBar;
+
+    public bool shieldActivated;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void OnDamageTaken(float damage)
     {
+        if (shieldActivated)
+            return;
+
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
         healthBar.SetHealth(currentHealth);
 

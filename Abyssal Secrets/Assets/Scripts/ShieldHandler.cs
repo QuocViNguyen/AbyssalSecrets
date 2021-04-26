@@ -8,6 +8,11 @@ public class ShieldHandler : MonoBehaviour
 
     private float remainingLifeTime = 5f;
 
+    private void Start()
+    {
+        FindObjectOfType<PlayerHealth>().shieldActivated = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +23,9 @@ public class ShieldHandler : MonoBehaviour
 
         remainingLifeTime -= Time.deltaTime;
         if (remainingLifeTime <= 0)
+        {
+            FindObjectOfType<PlayerHealth>().shieldActivated = false;
             Destroy(gameObject);
+        }
     }
 }
