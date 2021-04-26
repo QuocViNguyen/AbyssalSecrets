@@ -2202,6 +2202,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfd68eeeddcd3514b811365783beab12, type: 3}
+--- !u!114 &1837401346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1944116936906272620, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
+  m_PrefabInstance: {fileID: 8036740607044312542}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1960240000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1724608327619253442, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
@@ -2318,11 +2329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5237219001267091307, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.8
+      value: -43
       objectReference: {fileID: 0}
     - target: {fileID: 5237219001267091307, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -282.2
+      value: -223.5
       objectReference: {fileID: 0}
     - target: {fileID: 5237219001267091307, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2393,6 +2404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayerName: {fileID: 850419890}
   displayerDesc: {fileID: 1347846805}
+  artifactTracker: {fileID: 1837401346}
 --- !u!82 &636335617247715308 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 636335617247715307, guid: a23617186fecbf044a9c0afb4e381458, type: 3}
@@ -2943,14 +2955,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1724608325905313321, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1724608326871536961, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1724608327619253442, guid: e7585f6c2e25fea4596ab5a0de824183, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
