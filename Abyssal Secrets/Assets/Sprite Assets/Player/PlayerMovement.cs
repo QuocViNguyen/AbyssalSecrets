@@ -48,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
         float moveY = Input.GetAxis("Vertical");
         if (Mathf.Abs(moveX) > 0 && Mathf.Abs(moveY) > 0)
         {
-            moveX = Mathf.Min(moveX, 0.65f);
-            moveY = Mathf.Min(moveY, 0.65f);
+            moveX = Mathf.Min(moveX, 0.6f);
+            moveY = Mathf.Min(moveY, 0.6f);
         }
 
         // Generates the thrust forward to your rigidbody

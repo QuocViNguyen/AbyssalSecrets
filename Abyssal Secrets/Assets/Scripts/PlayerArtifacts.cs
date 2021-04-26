@@ -35,7 +35,7 @@ public class PlayerArtifacts : MonoBehaviour
 
     private IEnumerator ClearArtifactDisplay()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5);
         displayerName.text = "";
         displayerDesc.text = "";
     }
