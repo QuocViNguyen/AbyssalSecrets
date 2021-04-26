@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeatHandler : MonoBehaviour
 {
-    private float remainingLifeTime = 3.5f;
+    private float remainingLifeTime = 5f;
 
     // Update is called once per frame
     void Update()

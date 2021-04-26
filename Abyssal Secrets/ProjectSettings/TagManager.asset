@@ -10,6 +10,7 @@ TagManager:
   - MusicTrigger1
   - MusicTrigger2
   - BossMusicTrigger
+  - MusicTrigger
   layers:
   - Default
   - TransparentFX

@@ -99,7 +99,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "MusicTrigger1")
+        if (collision.tag == "MusicTrigger")
+        {
+            AudioManager.Instance.PlayStage1();
+        }
+        else if (collision.tag == "MusicTrigger1")
         {
             AudioManager.Instance.PlayStage2();
         }

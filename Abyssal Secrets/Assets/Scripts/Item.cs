@@ -20,7 +20,6 @@ public class SpeedBoost : Item
 
     public override void Use()
     {
-        Debug.Log("SpeedBoost used");
         AudioManager.Instance.PlaySpeedBoost();
         Object.FindObjectOfType<PlayerMovement>().BoostSpeed();
     }
@@ -45,7 +44,7 @@ public class SmellyBomb : Item
 
     public override void Use()
     {
-        Debug.Log("SmellyBomb used");
+        AudioManager.Instance.PlaySmellyBomb();
     }
 }
 
@@ -55,7 +54,10 @@ public class Meat : Item
 
     public override void Use()
     {
-        Object.Instantiate(Resources.Load("Meat"));
+        Transform playerTransform = Object.FindObjectOfType<PlayerHealth>().transform;
+        GameObject meat = (GameObject)Object.Instantiate(Resources.Load("Meat"));
+        meat.transform.position = playerTransform.position;
+        AudioManager.Instance.PlayThrowingMeat();
     }
 }
 
@@ -65,6 +67,6 @@ public class Rune : Item
 
     public override void Use()
     {
-        Debug.Log("Rune used");
+        AudioManager.Instance.PlayRuneExplosion();
     }
 }

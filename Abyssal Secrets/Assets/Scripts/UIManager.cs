@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -18,11 +19,6 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void ShowGameOver()
-    {
-
-    }
-
     public void ShowCredit()
     {
         mainMenu.SetActive(false);
@@ -33,5 +29,10 @@ public class UIManager : MonoBehaviour
     {
         mainMenu.SetActive(true);
         creditPanel.SetActive(false);
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
