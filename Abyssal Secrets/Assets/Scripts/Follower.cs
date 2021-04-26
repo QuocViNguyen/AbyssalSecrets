@@ -7,12 +7,15 @@ public class Follower : MonoBehaviour
     private bool isInRange;
     private Transform target;
     private Vector3 lastPosition;
-    
+
+    private float chasingSpeed = 12f;
+    private float returnSpeed = 8f;
+
     // Start is called before the first frame update
     void Start()
     {
         isInRange = false;
-        lastPosition = transform.position;
+        lastPosition = transform.parent.position;
     }
 
     // Update is called once per frame
@@ -20,11 +23,13 @@ public class Follower : MonoBehaviour
     { 
         if (isInRange)
         {
-            transform.parent.position = Vector2.Lerp(transform.parent.position, target.position, 0.00297f);
+            Vector3 direction = (target.position - transform.parent.position).normalized;
+            transform.parent.position += direction * chasingSpeed * Time.deltaTime;
         }
         else
         {
-            transform.parent.position = Vector2.Lerp(transform.parent.position, lastPosition, 0.0015f);
+            Vector3 direction = (lastPosition - transform.parent.position).normalized;
+            transform.parent.position += direction * returnSpeed * Time.deltaTime;
         }
     }
 
