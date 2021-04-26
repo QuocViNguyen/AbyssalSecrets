@@ -96,5 +96,21 @@ public class PlayerMovement : MonoBehaviour
 
         movementSpeed = baseSpeed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "MusicTrigger1")
+        {
+            AudioManager.Instance.PlayStage2();
+        }
+        else if (collision.tag == "MusicTrigger2")
+        {
+            AudioManager.Instance.PlayStage3();
+        }
+        else if (collision.tag == "BossMusicTrigger")
+        {
+            AudioManager.Instance.PlayBossStage();
+        }
+    }
 }
 

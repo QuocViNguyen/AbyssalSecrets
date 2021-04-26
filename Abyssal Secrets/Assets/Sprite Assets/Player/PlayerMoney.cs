@@ -37,7 +37,6 @@ public class PlayerMoney : MonoBehaviour
     public void UseMoney(int amount)
     {
         money -= amount;
-        Debug.Log(money);
         PlayerPrefs.SetInt(Key, money);
     }
 }

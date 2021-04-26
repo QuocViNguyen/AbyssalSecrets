@@ -7,6 +7,9 @@ TagManager:
   - Attacker
   - Bomb
   - Chest
+  - MusicTrigger1
+  - MusicTrigger2
+  - BossMusicTrigger
   layers:
   - Default
   - TransparentFX
