@@ -460,6 +460,7 @@ MonoBehaviour:
   smellyBombExplosion: {fileID: 8300000, guid: 48d6644c0047e4d11b2fd3b55c2a8fe6, type: 3}
   runeExplosion: {fileID: 8300000, guid: 7097c5ed68ac0402686a2cce81a00f02, type: 3}
   meatThrowing: {fileID: 8300000, guid: 77c2dd277786f41e8907f23dfb2a90ff, type: 3}
+  bossTrigger: {fileID: 7903911925173533016}
 --- !u!1 &7903911924785403666
 GameObject:
   m_ObjectHideFlags: 0

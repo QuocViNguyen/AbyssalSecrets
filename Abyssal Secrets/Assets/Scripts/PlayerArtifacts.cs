@@ -10,6 +10,10 @@ public class PlayerArtifacts : MonoBehaviour
     [SerializeField] Text displayerDesc;
     [SerializeField] Text artifactTracker;
     [SerializeField] GameObject winPanel;
+    [SerializeField] ItemManager itemManager;
+
+    private int requiredArtifactCount = 6;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +23,13 @@ public class PlayerArtifacts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (artifacts.Count == 7)
+        if (artifacts.Count == requiredArtifactCount)
         {
-            GameManager.Instance.GameStarted = false;
-            GetComponent<AudioSource>().Stop();
-            AudioManager.Instance.PlayGameOver();
-            winPanel.SetActive(true);
+            itemManager.EnableRuneSlot();
+            //GameManager.Instance.GameStarted = false;
+            //GetComponent<AudioSource>().Stop();
+            //AudioManager.Instance.PlayGameOver();
+            //winPanel.SetActive(true);
         }
     }
 
@@ -33,15 +38,10 @@ public class PlayerArtifacts : MonoBehaviour
         AudioManager.Instance.PlayOpenChest();
         displayerName.text = artifact.Name;
         displayerDesc.text = artifact.Description;
-        artifacts.Add(artifact);
-        artifactTracker.text = artifacts.Count.ToString();
-        StartCoroutine(ClearArtifactDisplay());
-    }
-
-    private IEnumerator ClearArtifactDisplay()
-    {
-        yield return new WaitForSeconds(5);
-        displayerName.text = "";
-        displayerDesc.text = "";
+        if (artifacts.Count < requiredArtifactCount)
+        {
+            artifacts.Add(artifact);
+            artifactTracker.text = $"{artifacts.Count}/{requiredArtifactCount}";
+        }
     }
 }

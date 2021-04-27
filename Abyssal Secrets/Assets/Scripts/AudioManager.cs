@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip runeExplosion;
     [SerializeField] AudioClip meatThrowing;
 
+    [SerializeField] GameObject bossTrigger;
 
     private AudioSource sfxSource;
 
@@ -67,6 +68,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGrowl()
     {
+        bossTrigger.SetActive(false);
         musicSource.volume = 0.7f;
         PlayMusicWithFade(growl);
     }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerMoney : MonoBehaviour
 {
     private const string Key = "Money";
-    private int money = 0;
+    [SerializeField] int money = 0;
     [SerializeField] Text moneyText;
     // Start is called before the first frame update
     void Awake()

@@ -7,10 +7,11 @@ public class ItemManager : MonoBehaviour
 {
     [SerializeField] Image[] itemImages;
 
-    private const int MaxItemSlots = 5;
+    private const int MaxItemSlots = 4;
     private static Item[] items = new Item[MaxItemSlots];
     private static int slotCount = 0;
     [SerializeField] SharkFollower shark;
+    [SerializeField] Image runeSlot;
 
     private void Awake()
     {
@@ -59,9 +60,10 @@ public class ItemManager : MonoBehaviour
         {
             UseItem(3);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        else if (runeSlot.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Alpha5))
         {
-            UseItem(4);
+            new Rune(null).Use();
+            runeSlot.gameObject.SetActive(false);
         }
     }
 
@@ -92,5 +94,10 @@ public class ItemManager : MonoBehaviour
 
         Debug.Log("Already full slots");
         return false;
+    }
+
+    public void EnableRuneSlot()
+    {
+        runeSlot.gameObject.SetActive(true);
     }
 }
