@@ -26,22 +26,29 @@ public class PlayerArtifacts : MonoBehaviour
         if (artifacts.Count == requiredArtifactCount)
         {
             itemManager.EnableRuneSlot();
-            //GameManager.Instance.GameStarted = false;
-            //GetComponent<AudioSource>().Stop();
-            //AudioManager.Instance.PlayGameOver();
-            //winPanel.SetActive(true);
         }
     }
 
     public void AddArtifact(Artifact artifact)
     {   
         AudioManager.Instance.PlayOpenChest();
+        displayerDesc.transform.parent.gameObject.SetActive(true);
         displayerName.text = artifact.Name;
         displayerDesc.text = artifact.Description;
-        if (artifacts.Count < requiredArtifactCount)
+        artifacts.Add(artifact);
+        if (artifacts.Count <= requiredArtifactCount)
         {
-            artifacts.Add(artifact);
             artifactTracker.text = $"{artifacts.Count}/{requiredArtifactCount}";
         }
+    }
+
+    public bool IsFullArtifacts()
+    {
+        return artifacts.Count > requiredArtifactCount;
+    }
+
+    public void EndGame()
+    {
+        GetComponent<AudioSource>()?.Stop();
     }
 }

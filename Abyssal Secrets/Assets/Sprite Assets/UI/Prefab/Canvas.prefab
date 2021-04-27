@@ -1154,6 +1154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 0}
   creditPanel: {fileID: 0}
+  artifactUI: {fileID: 1572369370}
+  winPanel: {fileID: 813060056}
+  playerArtifacts: {fileID: 0}
 --- !u!1 &1724608326871536962
 GameObject:
   m_ObjectHideFlags: 0
